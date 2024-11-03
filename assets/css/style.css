@@ -1,3 +1,18 @@
+@font-face{
+  font-family: "BYekan";
+  src: url(/assets/fonts-BYekan/BYekan-webfont.eot); format("eot");
+  src: url(/assets/fonts-BYekan/BYekan-webfont.woff); format("woff");
+  src: url(/assets/fonts-BYekan/BYekan-webfont.ttf); format("truetype");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+*{
+  direction: rtl;
+  /* font-family: "BYekan"; */
+}
+
 .w_100{
     width: 100%  !important;
 }
@@ -63,4 +78,8 @@
  .add_user_modal.show{
   box-shadow: 0 0 10px blue;
   bottom: 0vh;
+ }
+
+ .sidenav_link_icon{
+  margin: 0 0 0 25px  !important; 
  }
