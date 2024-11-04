@@ -5,35 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-  
-
-  console.log(1);
 
 
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 
-new Promise(
-  function (resolve,reject) {
 
-    setTimeout(function () {
-      console.log(2);
-      resolve("ok")
-      //  reject("not ok ...!") 
-    },1000)    
-  
-}
-).then(
-  function (response) {
-    console.log(response)
-    console.log(3);  
-  }
-).catch(
-  function (error) {
-    console.log(error);
-  }
-)
 
-console.log(4);
-console.log(5);
 
 
   });
