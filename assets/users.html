@@ -256,6 +256,12 @@
 
          </section>
 
+         <section id="test.section" class="red" x-data="{message:'Zeynab Khanoom'}" x-text="message">
+          Agha Amir Hossain
+          <span x-text="message" class="blue"></span>
+          <button class="btn" x-on:click="message = 'Ali'">click</button>
+         </section>
+
         <!-- Modal     section -->
 
         <div class="add_user-modal_back dis-none"></div>
@@ -322,6 +328,7 @@
 
 
      <!-- reference    Js -->
+     <script defer src="/assets/js/alpine.js"></script>
      <script src="/assets/materialize/js/materialize.min.js"></script>
      <script src="/assets/js/app.js"></script>
      <script src="/assets/js/useres.js"></script>
