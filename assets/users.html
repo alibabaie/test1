@@ -256,10 +256,10 @@
 
          </section>
 
-         <section id="test.section" class="red" x-data="{message:'Zeynab Khanoom'}">
+         <section id="test.section" class="red" x-data="mainData()">
           Agha Amir Hossain
           <span x-text="message" class="blue"></span>
-          <button class="btn" x-on:click=" message = 'Ali' ">click</button>
+          <button class="btn" x-on:click="testFunc()">click</button>
          </section>
 
         <!-- Modal     section -->
@@ -329,6 +329,7 @@
 
      <!-- reference    Js -->
      <script defer src="/assets/js/alpine.js"></script>
+     <script src="/assets/js/alpinjscontoroller/maincontoroller.js"></script>
      <script src="/assets/materialize/js/materialize.min.js"></script>
      <script src="/assets/js/app.js"></script>
      <script src="/assets/js/useres.js"></script>
