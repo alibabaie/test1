@@ -12,7 +12,7 @@
      <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
      <title>in the name of god</title>
 </head>
-<body dir="rtl">
+<body x-data="usersData">
    <!-- navbar    section  start -->
     <nav class="green z-depth-0 top_navbar">
         <div class="nav-wrapper">
@@ -61,8 +61,10 @@
         </section>
         
          <!-- user list    section              -->
+
+        <!-- user  list    in mobile size start  -->
  
-         <section class="user_list_section">
+         <section class="user_list_section" x-init="getUsers()">
 
          <ul class="collapsible hide-on-med-and-up">
         <li class="users_list_item">
@@ -162,7 +164,9 @@
         </li>
          </ul>
 
-         <!-- list in  Desctop -->
+         <!-- user  list    in mobile size end -->
+
+         <!-- user  list in    Desktop start -->
 
          <div class="hide-on-med-and-down show-on-medium-and-up container">
 
@@ -180,56 +184,28 @@
             </thead>
 
             <tbody class="desktop_table_body">
-            <tr>
-              <td>1</td>
-              <td>Ali</td>
-              <td>Babaie</td>
-              <td>ali_babaie2005@yahoo.com</td>
-              <td>Babol example street modarres</td>
-              <td>
-                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
-                <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edite</i>  
-              </td>
-            </tr>
 
-            <tr>
-              <td>1</td>
-              <td>Ali</td>
-              <td>Babaie</td>
-              <td>ali_babaie2005@yahoo.com</td>
-              <td>Babol example street modarres</td>
-              <td>
-                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
-                <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edite</i>  
-              </td>
-            </tr>
+              <template x-for="user in users">
 
-            <tr>
-              <td>1</td>
-              <td>Ali</td>
-              <td>Babaie</td>
-              <td>ali_babaie2005@yahoo.com</td>
-              <td>Babol example street modarres</td>
-              <td>
-                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
-                <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edite</i>  
-              </td>
-            </tr>
+                <tr>
+                  <td x-text="user.id"></td>
+                  <td x-text="user.name"></td>
+                  <td x-text="user.username"></td>
+                  <td x-text="user.email"></td>
+                  <td x-text="user.address.city+'-'+user.address.street"></td>
+                  <td>
+                    <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
+                    <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edite</i>  
+                  </td>
+                </tr>
 
-            <tr>
-              <td>1</td>
-              <td>Ali</td>
-              <td>Babaie</td>
-              <td>ali_babaie2005@yahoo.com</td>
-              <td>Babol example street modarres</td>
-              <td>
-                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
-                <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edite</i>  
-              </td>
-            </tr>
+              </template>
+
             </tbody>
           </table>
          </div>
+
+         <!-- user  list in    Desktop end -->
 
          <!-- page number users list -->
 
@@ -256,11 +232,7 @@
 
          </section>
 
-         <section id="test.section" class="red" x-data="mainData()">
-          Agha Amir Hossain
-          <span x-text="message" class="blue"></span>
-          <button class="btn" x-on:click="testFunc()">click</button>
-         </section>
+
 
         <!-- Modal     section -->
 
@@ -328,8 +300,9 @@
 
 
      <!-- reference    Js -->
+     <script src="/assets/js/axios.js"></script>
      <script defer src="/assets/js/alpine.js"></script>
-     <script src="/assets/js/alpinjscontoroller/maincontoroller.js"></script>
+     <script src="/assets/js/alpinjscontoroller/usersContoroller.js"></script>
      <script src="/assets/materialize/js/materialize.min.js"></script>
      <script src="/assets/js/app.js"></script>
      <script src="/assets/js/useres.js"></script>
