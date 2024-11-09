@@ -63,105 +63,75 @@
          <!-- user list    section              -->
 
         <!-- user  list    in mobile size start  -->
+
+        <!-- spinner start -->
+
+        <!-- <template x-if="isLoading"> -->
+
+          <div class="center-align" x-show="isLoading">
+            <div class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- </template> -->
+
+
  
+         <!-- spinner end -->
+
+
          <section class="user_list_section" x-init="getUsers()">
 
          <ul class="collapsible hide-on-med-and-up">
-        <li class="users_list_item">
-          <div class="collapsible-header">
 
-            <i class="material-icons blue-text darken-2 users_list_arrow_icon">
-              arrow_drop_down_circle</i>
-              Ali Babaie
-            
-          </div>
-            <div class="collapsible-body">
-              <div class="p-all-5">
-                <span class="f-bold">Username  :</span>
-                <span>Ali Babaie</span>
-              </div>
+         <template x-for="user in users">
 
-              <div class="p-all-5">
-                <span class="f-bold">Email  :</span>
-                <span>Ali_Babaie2005@yahoo.com</span>
-              </div>
-
-              <div class="p-all-5">
-                <span class="f-bold">Address  :</span>
-                <span>Babol - example street modarres</span>
-              </div>
-
-              <div class="p-all-5 flex-l-m">
-                <span class="f-bold">Action  :</span>
-                <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-                <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edite</i>
-              </div>
+          <li class="users_list_item">
+            <div class="collapsible-header">
+  
+              <i class="material-icons blue-text darken-2 users_list_arrow_icon">
+                arrow_drop_down_circle</i>
+                <span x-text="user.name"></span>
+                
+              
             </div>
-        </li>
-
-        <li class="users_list_item">
-          <div class="collapsible-header">
-
-            <i class="material-icons blue-text darken-2 users_list_arrow_icon">
-              arrow_drop_down_circle</i>
-              Ali Babaie
-            
-          </div>
-            <div class="collapsible-body">
-              <div class="p-all-5">
-                <span class="f-bold">Username  :</span>
-                <span>Ali Babaie</span>
+              <div class="collapsible-body">
+                <div class="p-all-5">
+                  <span class="f-bold">Username  :</span>
+                  <span x-text="user.username"></span>
+                </div>
+  
+                <div class="p-all-5">
+                  <span class="f-bold">Email  :</span>
+                  <span x-text="user.email"></span>
+                </div>
+  
+                <div class="p-all-5">
+                  <span class="f-bold">Address  :</span>
+                  <span x-text="user.address.city+'-'+user.address.street"></span>
+                </div>
+  
+                <div class="p-all-5 flex-l-m">
+                  <span class="f-bold">Action  :</span>
+                  <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+                  <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edite</i>
+                </div>
               </div>
+          </li>
 
-              <div class="p-all-5">
-                <span class="f-bold">Email  :</span>
-                <span>Ali_Babaie2005@yahoo.com</span>
-              </div>
+         </template>
 
-              <div class="p-all-5">
-                <span class="f-bold">Address  :</span>
-                <span>Babol - example street modarres</span>
-              </div>
 
-              <div class="p-all-5 flex-l-m">
-                <span class="f-bold">Action  :</span>
-                <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-                <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edite</i>
-              </div>
-            </div>
-        </li>
 
-        <li class="users_list_item">
-          <div class="collapsible-header">
-
-            <i class="material-icons blue-text darken-2 users_list_arrow_icon">
-              arrow_drop_down_circle</i>
-              Ali Babaie
-            
-          </div>
-            <div class="collapsible-body">
-              <div class="p-all-5">
-                <span class="f-bold">Username  :</span>
-                <span>Ali Babaie</span>
-              </div>
-
-              <div class="p-all-5">
-                <span class="f-bold">Email  :</span>
-                <span>Ali_Babaie2005@yahoo.com</span>
-              </div>
-
-              <div class="p-all-5">
-                <span class="f-bold">Address  :</span>
-                <span>Babol - example street modarres</span>
-              </div>
-
-              <div class="p-all-5 flex-l-m">
-                <span class="f-bold">Action  :</span>
-                <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-                <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edite</i>
-              </div>
-            </div>
-        </li>
          </ul>
 
          <!-- user  list    in mobile size end -->
