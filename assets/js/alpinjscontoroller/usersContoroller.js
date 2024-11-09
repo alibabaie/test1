@@ -9,12 +9,21 @@ document.addEventListener('alpine:init', () => {
            getUsers(){
              this.isLoading = true
              axios.get("https://jsonplaceholder.typicode.com/users").then((res)=>{
-                this.isLoading = false
+                
                 this.users = res.data
                 
+                this.isLoading = false
                 
-                
+             }).catch(error=>{
+            
+             console.log(error.message);
+             
+             }).finally(()=>{
+                this.isLoading = false 
+             
              })
+             
+             
         }
     }    
           
