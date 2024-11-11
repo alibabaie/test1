@@ -14,7 +14,7 @@ document.addEventListener('alpine:init', () => {
 
         itemsCount: 4,
 
-        currentPage: 3,
+        currentPage: 1,
 
            getUsers(){
              this.isLoading = true
@@ -42,7 +42,21 @@ document.addEventListener('alpine:init', () => {
        let start = (this.currentPage * this.itemsCount) - this.itemsCount   //1*4 - 4 =0
        let end = this.currentPage * this.itemsCount   //1*4=4
        this.pageUsers = this.users.slice(start,end) 
-      }
+      },
+
+      nextPage(){
+         this.currentPage++
+         if (this.currentPage > this.pageCount) {
+            this.currentPage = this.pageCount
+         }
+         this.pagination()
+      },
+
+      prevPage(){
+         this.currentPage--
+         if (this.currentPage < 1) this.currentPage = 1
+         this.pagination()
+      }  
         
     }    
           
