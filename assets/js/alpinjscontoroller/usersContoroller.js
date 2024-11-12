@@ -18,6 +18,12 @@ document.addEventListener('alpine:init', () => {
 
         currentPage: 1,
 
+        newUserInfo:{
+         name:"",
+         username:"",
+         email:"",
+        },
+
            getUsers(){
              this.isLoading = true
              axios.get("https://jsonplaceholder.typicode.com/users").then((res)=>{
@@ -81,6 +87,12 @@ document.addEventListener('alpine:init', () => {
 
          },100)
          
+      },
+
+      handleSubmitAddUserForm(){
+      console.log(this.newUserInfo);
+      
+
       }
         
     }    
