@@ -95,21 +95,26 @@ document.addEventListener('alpine:init', () => {
          if (res.status= 201){
          this.mainUsers.push(res.data)
          this.showAddModal= false
+         this.handleResetForm()
          this.pagination()
+         M.toast({html: 'کاربر با موفقیت ثبت شد', classes: 'rounded green'})
          }
 
-         
 
-      
       }).finally(()=>{
          this.isLoading = false 
       
       })
+      },
 
-      
+       handleResetForm(){
 
-      }
-        
+         this.newUserInfo = {
+         name:"",
+         username:"",
+         email:"",   
+         }
+       }    
     }    
           
         
